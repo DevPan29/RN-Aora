@@ -12,9 +12,7 @@ export default function App() {
       <ScrollView contentContainerStyle={{
         height: '100%'
       }}>
-        {/* <View className="w-full justify-center items-center h-full px-4"> tutorial add justify-center but
-        the logo should be positioned in center at the top so the rule justify-center shouldn't be applied*/}
-        <View className="w-full items-center h-full px-4">
+        <View className="w-full justify-center items-center min-h-[85vh] px-4">
           <Image
             source={images.logo} className="w-[130px] h-[84px]" resizeMode='contain' />
           <Image
