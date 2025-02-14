@@ -6,6 +6,7 @@ import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton';
 import { Link } from 'expo-router'
+import { createUser } from '../../lib/appwrite'
 
 const SignUp = () => {
   const [form, setform] = useState({
@@ -17,7 +18,7 @@ const SignUp = () => {
   const [isSubmitting, setSubmitting] = useState(false)
 
   const submit = () => {
-
+    createUser();
   }
 
 
@@ -58,7 +59,7 @@ const SignUp = () => {
           />
 
           <CustomButton 
-            title="Sign In"
+            title="Sign Up"
             handlePress={submit}
             containerStyle="mt-7"
             isLoading={isSubmitting}
