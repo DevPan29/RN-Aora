@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <SafeAreaView className="bg-primary h-full" >
-      <ScrollView contentContainerStyle={{
+      <ScrollView contentcontainerStyles={{
         height: '100%'
       }}>
         {/* the original code have 85vh but in my case probably yhe best option is 100vh */}
@@ -44,7 +44,7 @@ export default function App() {
             <CustomButton 
               title="Continue with Email"
               handlePress={() => {router.push('/sign-in')}}
-              containerStyle="w-full mt-7"
+              containerStyles="w-full mt-7"
             />
         </View>
       </ScrollView>
