@@ -13,7 +13,7 @@ const Home = () => {
       <FlatList
         data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
         // data={[]}
-        keyExtractor={(item) => item.$id}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Text className="text-3xl text-white">{item.id}</Text>
         )}
@@ -42,7 +42,7 @@ const Home = () => {
               <Text className="text-gray-100 text-lg font-pregular mb-3">
                 Latest Videos
               </Text>
-              <Trending posts={[{ id: 1 }, { id: 2 }, { id: 3 }] ?? []}/>
+              <Trending posts={[{ id: 11 }, { id: 21 }, { id: 31 }] ?? []}/>
             </View>
           </View>
         )}
