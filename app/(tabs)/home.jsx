@@ -7,13 +7,13 @@ import SearchInput from '../../components/SearchInput'
 import Trending from '../../components/Trending'
 import EmptyState from '../../components/EmptyState'
 import { getAllPosts } from '../../lib/appwrite'
+import useAppwrite from '../../lib/useAppwrite'
 
 const Home = () => {
 
+  const { data: posts } = useAppwrite(getAllPosts);
+  // console.log(posts);
   
-
-
-
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = async () => {
