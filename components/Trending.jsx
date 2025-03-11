@@ -41,10 +41,14 @@ const TrendingItem = ({ activeItem, item }) => {
         resizeMode={ResizeMode.CONTAIN}
         useNativeControls
         shouldPlay
-        onPlaybackStatusUpdate={(status) => {
+        onPlaybackStatusUpdate={(status) =>  {
           if (status.didJustFinish) {
             setPlay(false)
           }
+        }}
+        onError={(error) => {
+          console.error(error)
+          setPlay(false)
         }}
       /> ) :
         (<TouchableOpacity
