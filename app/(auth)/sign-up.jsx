@@ -7,8 +7,10 @@ import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton';
 import { Link, router } from 'expo-router'
 import { createUser } from '../../lib/appwrite'
+import { useGlobalContext } from '../../context/GlobalProvider'
 
 const SignUp = () => {
+  const { setUser, setIsLogged } = useGlobalContext();
   const [form, setform] = useState({
     username: '',
     email: '',
@@ -25,7 +27,9 @@ const SignUp = () => {
     try {
       const result = await createUser(form.email, form.password, form.username);  
 
-      // set it to gloab state...
+      setUser(result);
+      
+      setIsLogged(true);
 
       router.replace('/home')
     } catch (error) {
