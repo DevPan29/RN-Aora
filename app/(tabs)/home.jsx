@@ -37,7 +37,7 @@ const Home = () => {
         // data={[]}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
-          <VideoCard video={item}/>
+          <VideoCard videoItem={item} currentUser={user}/>
         )}
         ListHeaderComponent={() => (
           <View className="my-6 px-4 space-y-6">
@@ -58,7 +58,9 @@ const Home = () => {
                 />
               </View>
             </View>
-            <SearchInput></SearchInput>
+            <SearchInput 
+              placeholder="Search for a video topic"
+            ></SearchInput>
             <View className="w-full flex-1 pt-5 pb-8"
             >
               <Text className="text-gray-100 text-lg font-pregular mb-3">

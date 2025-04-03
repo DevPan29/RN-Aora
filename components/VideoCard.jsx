@@ -2,10 +2,20 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { icons } from '../constants'
 import { ResizeMode, Video } from 'expo-av';
+import { toggleLikeVideo } from '../lib/appwrite';
 
-const VideoCard = ({ video: { title, thumbnail, video, creator: { username, avatar } } }) => {
 
+const VideoCard = ({ videoItem, currentUser }) => {
+    const [isLiked, setIsLiked] = useState(videoItem.isLiked || false);
+    const { title, thumbnail, video, creator: { username, avatar } } = videoItem;
+    
     const [play, setPlay] = useState(false);
+    const changeLikeVideo = async () => {
+        console.log(`toggleLikeVideo call`);
+        const response = await toggleLikeVideo(currentUser.$id, videoItem.$id);
+        console.log( 'reponse', response);
+        setIsLiked(response);
+    }
 
     return (
         <View className="flex-col items-center px-4 mb-14">
@@ -27,7 +37,11 @@ const VideoCard = ({ video: { title, thumbnail, video, creator: { username, avat
                     </View>
                 </View>
                 <View className="pt-2">
-                    <Image source={icons.menu} className="w-5 h-5" resizeMode='contain' />
+                    <TouchableOpacity
+                        onPress={changeLikeVideo}
+                    >
+                        <Image source={isLiked ? icons.heartFull : icons.heartEmpty} className="w-5 h-5" resizeMode='contain' />
+                    </TouchableOpacity>
                 </View>
             </View>
 

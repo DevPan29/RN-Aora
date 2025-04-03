@@ -33,7 +33,7 @@ const Profile = () => {
         // data={[]}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
-          <VideoCard video={item} />
+          <VideoCard videoItem={item} currentUser={user}/>
         )}
         ListHeaderComponent={() => (
           <View className="w-full justify-center items-center mt-6 mb-12 px-4">
