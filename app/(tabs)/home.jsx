@@ -15,7 +15,7 @@ const Home = () => {
 
   const { user, setUser, setIsLogged } = useGlobalContext();
 
-  const { data: posts, refetch } = useAppwrite(getAllPosts);
+  const { data: posts, refetch } = useAppwrite( () => getAllPosts(user) );
 
   const { data: latestPosts } = useAppwrite(getLatestPosts);
   

@@ -13,7 +13,7 @@ const Search = () => {
   const { user, setUser, setIsLogged } = useGlobalContext();
   const { query } = useLocalSearchParams();
   const { data: posts, refetch } = useAppwrite(
-    () => searchPosts(query)
+    () => searchPosts(query, user)
   );
 
   useEffect(() => {

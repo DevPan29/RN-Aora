@@ -13,7 +13,7 @@ const Bookmark = () => {
 
   const { user, setUser, setIsLogged } = useGlobalContext();
 
-  const { data: posts, refetch } = useAppwrite(getAllPosts);
+  const { data: posts, refetch } = useAppwrite( () => getAllPosts(user) );
 
   const [refreshing, setRefreshing] = useState(false);
   
