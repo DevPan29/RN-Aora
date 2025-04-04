@@ -1,4 +1,4 @@
-![AORA Logo](assets\images\logo.png)
+![AORA Logo](assets/images/logo.png)
 # 🌟 AORA - Video Sharing Platform
 
 AORA is a modern video-sharing platform built with **React Native** and powered by **Appwrite**. It allows users to upload, browse, and interact with videos in a seamless and engaging way. Whether you're looking to share your creativity or explore trending content, AORA has you covered!
